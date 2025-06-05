@@ -29,13 +29,11 @@ For a new owner you need to:
 #### Backend Service
 
 <ul>
-<li>First make sure you have Python and Pip installed in your machine</li>
+<li>First make sure you have Composer, XAMPP/ WAMPP installed in your machine</li>
 <li>Navigate to the backend directory using your command prompt or terminal</li>
-<li>Create a virtual environment named <strong>env</strong> for the backend using the following command: <code>python -m venv env</code></li>
-<li>Activate the virtual environment using the following command:
-<ul> <li>Linux - <code>source env/bin/activate</code></li><li>Windows - <code>env\Scripts\activate</code></li></ul></li>
-<li>Add the required dependencies in the virtual environment using the following command: <code>pip install -r requirements.txt</code></li>
-<li>Execute the backend using the following command: <code>uvicorn main:app --reload</code></li>
+<li>Create the database</li>
+<li>Migrate the tables to the database using the following command: <code>php artisan migrate</code></li>
+<li>Execute the backend using the following command: <code>php artisan serve</code></li>
 </ul>
 
 #### Frontend Service
