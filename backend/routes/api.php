@@ -3,12 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CaretakerController;
-use App\Http\Controllers\OwnerController;
-use App\Http\Controllers\OwnerExpenseController;
+use App\Http\Controllers\RentalExpenseController;
 use App\Http\Controllers\RentalController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\TenantController;
-use App\Http\Controllers\TenantExpenseController;
+use App\Http\Controllers\RentalIncomeController;
 use App\Http\Controllers\UserController;
 
 Route::get('/user', function (Request $request) {
@@ -23,16 +22,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/caretaker/{id}', [CaretakerController::class, 'show']);
     Route::patch('/caretaker/update/{id}', [CaretakerController::class, 'update']);
     Route::delete('/caretaker/delete/{id}', [CaretakerController::class, 'destroy']);
-    Route::post('/owner/create', [OwnerController::class, 'store']);
-    Route::get('/owners', [OwnerController::class, 'index']);
-    Route::get('/owner/{id}', [OwnerController::class, 'show']);
-    Route::patch('/owner/update/{id}', [OwnerController::class, 'update']);
-    Route::delete('/owner/delete/{id}', [OwnerController::class, 'destroy']);
-    Route::post('/ownerexpense/create', [OwnerExpenseController::class, 'store']);
-    Route::get('/ownerexpenses', [OwnerExpenseController::class, 'index']);
-    Route::get('/ownerexpense/{id}', [OwnerExpenseController::class, 'show']);
-    Route::patch('/ownerexpense/update/{id}', [OwnerExpenseController::class, 'update']);
-    Route::delete('/ownerexpense/delete/{id}', [OwnerExpenseController::class, 'destroy']);
+    Route::post('/rentalexpense/create', [RentalExpenseController::class, 'store']);
+    Route::get('/rentalexpenses', [RentalExpenseController::class, 'index']);
+    Route::get('/rentalexpense/{id}', [RentalExpenseController::class, 'show']);
+    Route::patch('/rentalexpense/update/{id}', [RentalExpenseController::class, 'update']);
+    Route::delete('/rentalexpense/delete/{id}', [RentalExpenseController::class, 'destroy']);
     Route::post('/rental/create', [RentalController::class, 'store']);
     Route::get('/rentals', [RentalController::class, 'index']);
     Route::get('/rental/{id}', [RentalController::class, 'show']);
@@ -48,11 +42,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/tenant/{id}', [TenantController::class, 'show']);
     Route::patch('/tenant/update/{id}', [TenantController::class, 'update']);
     Route::delete('/tenant/delete/{id}', [TenantController::class, 'destroy']);
-    Route::post('/tenantexpense/create', [TenantExpenseController::class, 'store']);
-    Route::get('/tenantexpenses', [TenantExpenseController::class, 'index']);
-    Route::get('/tenantexpense/{id}', [TenantExpenseController::class, 'show']);
-    Route::patch('/tenantexpense/update/{id}', [TenantExpenseController::class, 'update']);
-    Route::delete('/tenantexpense/delete/{id}', [TenantExpenseController::class, 'destroy']);
+    Route::post('/rentalincome/create', [RentalIncomeController::class, 'store']);
+    Route::get('/rentalincomes', [RentalIncomeController::class, 'index']);
+    Route::get('/rentalincome/{id}', [RentalIncomeController::class, 'show']);
+    Route::patch('/rentalincome/update/{id}', [RentalIncomeController::class, 'update']);
+    Route::delete('/rentalincome/delete/{id}', [RentalIncomeController::class, 'destroy']);
     Route::post('/user/create', [UserController::class, 'store']);
     Route::get('/users', [UserController::class, 'index']);
     Route::get('/user/{id}', [UserController::class, 'show']);
