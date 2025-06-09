@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -20,9 +21,13 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
+        'first_name',
+        'middle_name',
+        'surname',
+        'contact',
+        'is_approved',
     ];
 
     /**
@@ -32,6 +37,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
+        'slug',
         'remember_token',
     ];
 
@@ -46,5 +52,18 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function setSlugAttribute($firstname, $middlename, $surname) {
+        $fullName = $firstname.$middlename.$surname;
+        $this->attributes['slug'] = strtolower(preg_replace('/\s+/', '', $fullName));
+    }
+
+    public function setCreatedByAttribute() {
+        $this->attributes['created_by'] = Auth::user();
+    }
+
+    public function setUpdatedByAttribute() {
+        $this->attributes['updated_by'] = Auth::user();
     }
 }
