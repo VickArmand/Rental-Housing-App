@@ -22,6 +22,14 @@ class UserController extends Controller
     {
         //
     }
+    
+    public function login() {
+        return ['success' => 'login success'];
+    }
+
+    public function logout() {
+
+    }
 
     /**
      * Store a newly created resource in storage.
