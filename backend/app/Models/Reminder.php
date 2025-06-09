@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TenantExpense extends Model
+class Reminder extends Model
 {
     //
 }

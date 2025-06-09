@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\OwnerExpense;
+use App\Models\RentalIncome;
 use Illuminate\Http\Request;
 
-class OwnerExpenseController extends Controller
+class RentalIncomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class OwnerExpenseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(OwnerExpense $ownerExpense)
+    public function show(RentalIncome $rentalIncome)
     {
         //
     }
@@ -42,7 +42,7 @@ class OwnerExpenseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OwnerExpense $ownerExpense)
+    public function edit(RentalIncome $rentalIncome)
     {
         //
     }
@@ -50,7 +50,7 @@ class OwnerExpenseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, OwnerExpense $ownerExpense)
+    public function update(Request $request, RentalIncome $rentalIncome)
     {
         //
     }
@@ -58,7 +58,7 @@ class OwnerExpenseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OwnerExpense $ownerExpense)
+    public function destroy(RentalIncome $rentalIncome)
     {
         //
     }

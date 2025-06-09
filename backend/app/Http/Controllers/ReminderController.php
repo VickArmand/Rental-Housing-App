@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Owner;
+use App\Models\Reminder;
 use Illuminate\Http\Request;
 
-class OwnerController extends Controller
+class ReminderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class OwnerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Owner $owner)
+    public function show(Reminder $reminder)
     {
         //
     }
@@ -42,7 +42,7 @@ class OwnerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Owner $owner)
+    public function edit(Reminder $reminder)
     {
         //
     }
@@ -50,7 +50,7 @@ class OwnerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Owner $owner)
+    public function update(Request $request, Reminder $reminder)
     {
         //
     }
@@ -58,7 +58,7 @@ class OwnerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Owner $owner)
+    public function destroy(Reminder $reminder)
     {
         //
     }
