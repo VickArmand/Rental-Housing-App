@@ -16,7 +16,7 @@ return new class extends Migration
             $table->enum('type', ['salary', 'maintenance', 'tax', 'water', 'electricity', 'miscellaneous']);
             $table->text('description')->nullable();
             $table->float('amount', 2);
-            $table->dateTime('payment_date');
+            $table->timestamp('payment_date');
             $table->foreignUuid('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('recipient');
             $table->enum('mode_of_payment', ['mobile', 'bank', 'cash'])->nullable();

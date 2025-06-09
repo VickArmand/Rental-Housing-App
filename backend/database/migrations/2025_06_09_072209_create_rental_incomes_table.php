@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->float('amount', 2);
             $table->foreignUuid('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->dateTime('payment_date');
+            $table->timestamp('payment_date');
             $table->enum('mode_of_payment', ['mobile', 'bank', 'cash'])->nullable();
             $table->foreignUuid('tenant_id')->nullable()->references('id')->on('tenants')->onDelete('cascade');
             $table->string('receipt_number')->nullable();
