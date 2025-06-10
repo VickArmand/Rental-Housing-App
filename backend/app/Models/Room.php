@@ -20,11 +20,15 @@ class Room extends Model
         'slug'
     ];
 
+    public function setSlugAttribute($name) {
+        $this->attributes['slug'] = strtolower(preg_replace('/\s+/', '', $name));
+    }
+    
     public function setCreatedByAttribute() {
-        $this->attributes['created_by'] = Auth::user();
+        $this->attributes['created_by'] = Auth::user()->id;
     }
 
     public function setUpdatedByAttribute() {
-        $this->attributes['updated_by'] = Auth::user();
+        $this->attributes['updated_by'] = Auth::user()->id;
     }
 }

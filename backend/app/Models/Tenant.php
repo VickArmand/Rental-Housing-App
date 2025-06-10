@@ -27,10 +27,12 @@ class Tenant extends Model
     }
 
     public function setCreatedByAttribute() {
-        $this->attributes['created_by'] = Auth::user();
+        if (Auth::check())
+            $this->attributes['created_by'] = Auth::user()->id;
     }
 
     public function setUpdatedByAttribute() {
-        $this->attributes['updated_by'] = Auth::user();
+        if (Auth::check())
+            $this->attributes['updated_by'] = Auth::user()->id;
     }
 }

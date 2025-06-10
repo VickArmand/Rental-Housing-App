@@ -23,14 +23,17 @@ class Rental extends Model
     }
 
     public function setUserIdAttribute() {
-        $this->attributes['user_id'] = Auth::user();
+        if (Auth::check())
+            $this->attributes['user_id'] = Auth::user()->id;
     }
 
     public function setCreatedByAttribute() {
-        $this->attributes['created_by'] = Auth::user();
+        if (Auth::check())
+            $this->attributes['created_by'] = Auth::user()->id;
     }
 
     public function setUpdatedByAttribute() {
-        $this->attributes['updated_by'] = Auth::user();
+        if (Auth::check())
+            $this->attributes['updated_by'] = Auth::user()->id;
     }
 }
