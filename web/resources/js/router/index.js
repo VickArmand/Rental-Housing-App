@@ -3,15 +3,19 @@ import Login from "../components/Login.vue";
 
 const routes = [
     {
+        path: "/",
+        component: Login,
+        meta: { requiresAuth: false },
+    },
+    {
         path: "/login",
-        name: "Login",
         component: Login,
         meta: { requiresAuth: false },
     },
 ];
 
 const router = createRouter({
-    history: createWebHistory("/"),
+    history: createWebHistory(),
     routes,
 });
 export default router;
