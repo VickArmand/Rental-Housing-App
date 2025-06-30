@@ -102,7 +102,7 @@ export default {
             this.errors.email = res !== true ? res : "";
             res = minLengthLimit(8)(this.formData.password);
             this.errors.password = res !== true ? res : "";
-            if (this.errors.email && this.errors.password) return false;
+            if (this.errors.email || this.errors.password) return false;
             return true;
         },
         async handleSubmit() {
